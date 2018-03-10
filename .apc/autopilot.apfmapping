@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="core.cpp" path="/home/keyarash/University/Project1/___Cifar10Resnet___/hls-nn-lib_test/.settings/core.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="test.cpp" path="/home/keyarash/University/Project1/___Cifar10Resnet___/hls-nn-lib_test/.settings/test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

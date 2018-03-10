@@ -1,0 +1,149 @@
+
+
+================================================================
+== Vivado HLS Report for 'docompute'
+================================================================
+* Date:           Sat Mar 10 21:30:40 2018
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        hls-nn-lib_test
+* Solution:       solution1
+* Product family: virtexuplus
+* Target device:  xcvu9p-fsgd2104-3-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      0.00|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    0|    0|    0|    0|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+---------+---------+-----+
+|       Name      | BRAM_18K| DSP48E|    FF   |   LUT   | URAM|
++-----------------+---------+-------+---------+---------+-----+
+|DSP              |        -|      -|        -|        -|    -|
+|Expression       |        -|      -|        -|        -|    -|
+|FIFO             |        -|      -|        -|        -|    -|
+|Instance         |        0|      -|       36|       40|    -|
+|Memory           |        -|      -|        -|        -|    -|
+|Multiplexer      |        -|      -|        -|       30|    -|
+|Register         |        -|      -|        5|        -|    -|
++-----------------+---------+-------+---------+---------+-----+
+|Total            |        0|      0|       41|       70|    0|
++-----------------+---------+-------+---------+---------+-----+
+|Available        |     4320|   6840|  2364480|  1182240|  960|
++-----------------+---------+-------+---------+---------+-----+
+|Utilization (%)  |        0|      0|    ~0   |    ~0   |    0|
++-----------------+---------+-------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------------------+-------------------------+---------+-------+----+----+
+    |          Instance         |          Module         | BRAM_18K| DSP48E| FF | LUT|
+    +---------------------------+-------------------------+---------+-------+----+----+
+    |docompute_control_s_axi_U  |docompute_control_s_axi  |        0|      0|  36|  40|
+    +---------------------------+-------------------------+---------+-------+----+----+
+    |Total                      |                         |        0|      0|  36|  40|
+    +---------------------------+-------------------------+---------+-------+----+----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |input_V_keep_V_0_state   |  15|          3|    2|          6|
+    |output_V_keep_V_0_state  |  15|          3|    2|          6|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    |  30|          6|    4|         12|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+---+----+-----+-----------+
+    |           Name          | FF| LUT| Bits| Const Bits|
+    +-------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                |  1|   0|    1|          0|
+    |input_V_keep_V_0_state   |  2|   0|    2|          0|
+    |output_V_keep_V_0_state  |  2|   0|    2|          0|
+    +-------------------------+---+----+-----+-----------+
+    |Total                    |  5|   0|    5|          0|
+    +-------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+-----------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |  Source Object  |    C Type    |
++-----------------------+-----+-----+------------+-----------------+--------------+
+|s_axi_control_AWVALID  |  in |    1|    s_axi   |     control     |  return void |
+|s_axi_control_AWREADY  | out |    1|    s_axi   |     control     |  return void |
+|s_axi_control_AWADDR   |  in |    4|    s_axi   |     control     |  return void |
+|s_axi_control_WVALID   |  in |    1|    s_axi   |     control     |  return void |
+|s_axi_control_WREADY   | out |    1|    s_axi   |     control     |  return void |
+|s_axi_control_WDATA    |  in |   32|    s_axi   |     control     |  return void |
+|s_axi_control_WSTRB    |  in |    4|    s_axi   |     control     |  return void |
+|s_axi_control_ARVALID  |  in |    1|    s_axi   |     control     |  return void |
+|s_axi_control_ARREADY  | out |    1|    s_axi   |     control     |  return void |
+|s_axi_control_ARADDR   |  in |    4|    s_axi   |     control     |  return void |
+|s_axi_control_RVALID   | out |    1|    s_axi   |     control     |  return void |
+|s_axi_control_RREADY   |  in |    1|    s_axi   |     control     |  return void |
+|s_axi_control_RDATA    | out |   32|    s_axi   |     control     |  return void |
+|s_axi_control_RRESP    | out |    2|    s_axi   |     control     |  return void |
+|s_axi_control_BVALID   | out |    1|    s_axi   |     control     |  return void |
+|s_axi_control_BREADY   |  in |    1|    s_axi   |     control     |  return void |
+|s_axi_control_BRESP    | out |    2|    s_axi   |     control     |  return void |
+|ap_clk                 |  in |    1| ap_ctrl_hs |    docompute    | return value |
+|ap_rst_n               |  in |    1| ap_ctrl_hs |    docompute    | return value |
+|interrupt              | out |    1| ap_ctrl_hs |    docompute    | return value |
+|input_r_TDATA          |  in |  512|    axis    |  input_V_data_V |    pointer   |
+|input_r_TVALID         |  in |    1|    axis    |  input_V_keep_V |    pointer   |
+|input_r_TREADY         | out |    1|    axis    |  input_V_keep_V |    pointer   |
+|input_r_TKEEP          |  in |   64|    axis    |  input_V_keep_V |    pointer   |
+|input_r_TLAST          |  in |    1|    axis    |  input_V_last_V |    pointer   |
+|output_r_TDATA         |  in |  512|    axis    | output_V_data_V |    pointer   |
+|output_r_TVALID        |  in |    1|    axis    | output_V_keep_V |    pointer   |
+|output_r_TREADY        | out |    1|    axis    | output_V_keep_V |    pointer   |
+|output_r_TKEEP         |  in |   64|    axis    | output_V_keep_V |    pointer   |
+|output_r_TLAST         |  in |    1|    axis    | output_V_last_V |    pointer   |
++-----------------------+-----+-----+------------+-----------------+--------------+
+
